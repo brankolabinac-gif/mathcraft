@@ -128,7 +128,7 @@
       nextChallenge();
     } else {
       buzz();
-      taskEl.animate([{opacity:1},{opacity:.3},{opacity:1}],{duration:240});
+      taskEl.animate([{opacity:1},{opacity:.5},{opacity:1}],{duration:240});
       playTone(200, 0.08);
     }
   }
