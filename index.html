@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>MathCraft</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1b1b1b">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", ()=>navigator.serviceWorker.register("./sw.js"));
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>MathCraft</h1>
+      <p>Uči zbrajanje i oduzimanje kroz životinje i kockice</p>
+    </header>
+
+    <section id="menu">
+      <div class="card">
+        <label for="mode">Način:</label>
+        <select id="mode">
+          <option value="add">Zbrajanje</option>
+          <option value="sub">Oduzimanje</option>
+          <option value="mix" selected>Miješano</option>
+        </select>
+      </div>
+      <div class="card">
+        <label for="limit">Raspon rezultata:</label>
+        <select id="limit">
+          <option value="10" selected>do 10</option>
+          <option value="20">do 20</option>
+        </select>
+      </div>
+      <button id="startBtn" class="primary">Kreni!</button>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="hud">
+        <div>Točno: <span id="score">0</span></div>
+        <div>Ukupan progres: <span id="totalScore">0</span></div>
+      </div>
+
+      <div id="world" aria-label="svijet od kockica"></div>
+
+      <div id="task" class="task"></div>
+      <div id="answers" class="answers"></div>
+      <button id="backBtn" class="ghost">Natrag u izbornik</button>
+    </section>
+
+    <div id="rewardOverlay" class="overlay hidden" role="dialog" aria-live="polite">
+      <div class="overlay-content" id="rewardContent"></div>
+    </div>
+
+    <footer>
+      <small>© MathCraft – demo za učenje</small>
+    </footer>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

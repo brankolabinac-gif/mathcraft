@@ -1,0 +1,34 @@
+*{box-sizing:border-box}html,body{margin:0;padding:0;height:100%}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',sans-serif;background:#0f0f0f;color:#eee}
+#app{max-width:720px;margin:0 auto;padding:16px}
+header{text-align:center;margin:12px 0 8px}
+h1{margin:0 0 6px;font-size:28px}
+#menu,.card{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.card{background:#1b1b1b;border:1px solid #2a2a2a;padding:12px;border-radius:14px}
+label{opacity:.85}
+select{background:#111;color:#eee;border:1px solid #333;border-radius:10px;padding:8px 10px}
+button{padding:14px 16px;border-radius:14px;border:1px solid #2a2a2a;background:#1b1b1b;color:#eee;cursor:pointer}
+button.primary{background:#2c7be5;border-color:#2c7be5}
+button.ghost{background:transparent}
+button:active{transform:translateY(1px)}
+.hidden{display:none}
+
+.hud{display:flex;justify-content:space-between;margin:10px 0 14px;background:#141414;padding:10px 12px;border-radius:12px;border:1px solid #2a2a2a}
+
+#world{height:280px;background:linear-gradient(#6dbbff,#b6e1ff) no-repeat top/100% 55%, #4c8d2b;padding:6px;border-radius:14px;border:1px solid #2a2a2a;position:relative;overflow:hidden}
+.grid{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(10,1fr);gap:2px;padding:6px}
+.cell{width:100%;aspect-ratio:1/1;border-radius:6px;border:1px solid rgba(0,0,0,.25);image-rendering:pixelated;display:flex;align-items:center;justify-content:center;font-size:22px;background:#1a1a1a}
+.r1 .cell, .r2 .cell{background:#234a21;border-color:#1a3417}
+.r3 .cell{background:#2a2a2a;border-color:#1d1d1d}
+.r4 .cell{background:#4c8d2b;border-color:#35601e}
+.cell.progress-on{background:#3b3b3b}
+.cell.bottom-on{background:#28a745}
+
+.task{margin:12px 0 8px;font-size:22px;text-align:center}
+.answers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.answers button{font-size:22px;padding:16px}
+footer{opacity:.7;text-align:center;margin-top:16px}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;z-index:9999}
+.overlay-content{font-size:22vw;line-height:1;animation:pop 700ms ease both}
+@keyframes pop{0%{transform:scale(.7);opacity:.3}70%{transform:scale(1.05);opacity:1}100%{transform:scale(1)}}
