@@ -69,8 +69,8 @@
 
   function setBottomProgress(n){
     gridBottom.forEach((cell,i)=>{
-      cell.classList.toggle('bottom-on', i < n);
-      cell.textContent = i < n ? '▮' : '';
+    cell.classList.toggle('bottom-on', i < n);
+    cell.textContent = i < n ? '▮' : '';
     });
   }
 
@@ -128,7 +128,7 @@
       nextChallenge();
     } else {
       buzz();
-      taskEl.animate([{opacity:1},{opacity:.5},{opacity:1}],{duration:240});
+      taskEl.animate([{opacity:1},{opacity:.6},{opacity:1}],{duration:240});
       playTone(200, 0.08);
     }
   }
